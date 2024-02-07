@@ -29,7 +29,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 
-// The value here should match an entry in the META-INF/mods.toml file
+// The value here should match an entry in the META-INF/mods.toml file random funny text test git
 @Mod(Jetpack_Mod.MOD_ID)
 public class Jetpack_Mod
 {
