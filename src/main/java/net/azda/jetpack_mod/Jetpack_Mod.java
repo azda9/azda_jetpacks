@@ -61,10 +61,10 @@ public class Jetpack_Mod
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event)
     {
-        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+        if(event.getTabKey() == CreativeModeTabs.COMBAT) {
             event.accept(ModItems.JETPACK);
         }
-        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+        if(event.getTabKey() == CreativeModeTabs.COMBAT) {
             event.accept(ModItems.JETPACK2);
         }
     }
