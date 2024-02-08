@@ -64,6 +64,9 @@ public class Jetpack_Mod
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.JETPACK);
         }
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.JETPACK2);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

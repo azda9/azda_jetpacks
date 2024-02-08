@@ -12,6 +12,7 @@ public class ModItems {
             DeferredRegister.create(ForgeRegistries.ITEMS, Jetpack_Mod.MOD_ID);
 
     public static final RegistryObject<Item> JETPACK = ITEMS.register("jetpack", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> JETPACK2 = ITEMS.register("super_jetpack", () -> new Item(new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
