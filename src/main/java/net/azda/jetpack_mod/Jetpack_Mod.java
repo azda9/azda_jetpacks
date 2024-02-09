@@ -4,6 +4,9 @@ import com.mojang.logging.LogUtils;
 import net.azda.jetpack_mod.item.ModItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.entity.animal.Sheep;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -16,7 +19,9 @@ import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
+import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
+import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -81,5 +86,16 @@ public class Jetpack_Mod
     public static class ClientModEvents
     {
 
+    }
+
+    @SubscribeEvent
+    public static void onLivingHurt(LivingHurtEvent event)
+    {
+        if(event.getEntity() instanceof Sheep) {
+            if(event.getSource().getEntity() instanceof Player player) {
+                player.lerpMotion(0,1,0);
+                player.sendSystemMessage(Component.literal(player.getName().getString()+"you hurted that hseep"));
+            }
+        }
     }
 }
