@@ -88,31 +88,4 @@ public class Jetpack_Mod
 
     }
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
-    @Mod.EventBusSubscriber(modid = MOD_ID)
-    public static class ForgeEvents
-    {
-        @SubscribeEvent
-        public static void onPlayerTick(TickEvent.PlayerTickEvent event)
-        {
-            var player = event.player;
-            var playerLook = player.getLookAngle();
-            if (Minecraft.getInstance().player != null) {
-                if (Minecraft.getInstance().player.input.jumping) {
-                    player.addDeltaMovement(new Vec3(0, 0.1, 0));
-                }
-                if (Minecraft.getInstance().player.input.up) {
-                    player.addDeltaMovement(new Vec3(0.05 * playerLook.x, 0, 0.05 * playerLook.z));
-                }
-                if (Minecraft.getInstance().player.input.down) {
-                    player.addDeltaMovement(new Vec3(-0.05 * playerLook.x, 0, -0.05 * playerLook.z));
-                }
-                if (Minecraft.getInstance().player.input.right) {
-                    player.addDeltaMovement(new Vec3(-0.05 * playerLook.z, 0, 0.05 * playerLook.x));
-                }
-                if (Minecraft.getInstance().player.input.left) {
-                    player.addDeltaMovement(new Vec3(0.05 * playerLook.z, 0, -0.05 * playerLook.x));
-                }
-            }
-        }
-    }
 }
